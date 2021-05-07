@@ -8,8 +8,5 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        println("This is Contained my Second commit")
-        println("Local Change")
-        println("Experimental")
     }
 }

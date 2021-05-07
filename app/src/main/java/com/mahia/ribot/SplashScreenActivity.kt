@@ -2,10 +2,20 @@ package com.mahia.ribot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
+import com.mahia.ribot.databinding.ActivitySplashScreenBinding
 
 class SplashScreenActivity : AppCompatActivity() {
+
+    private lateinit var mBinding: ActivitySplashScreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash_screen)
+        mBinding = ActivitySplashScreenBinding.inflate(layoutInflater)
+        setContentView(mBinding.root)
+
+//        Glide.with(this)
+//            .load(R.drawable.)
+
     }
 }
