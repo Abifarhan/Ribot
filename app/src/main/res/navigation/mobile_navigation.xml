@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_profile_patient">
+
+    <fragment
+        android:id="@+id/navigation_profile_patient"
+        android:name="com.mahia.ribot.view.ui.profilepatient.ProfilePatientFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile_patient" />
+
+    <fragment
+        android:id="@+id/navigation_treatment_present"
+        android:name="com.mahia.ribot.view.ui.treatmentpresent.TreatmentPresentFragment"
+        android:label="@string/title_treatment_present"
+        tools:layout="@layout/fragment_treatment_present" />
+
+    <fragment
+        android:id="@+id/navigation_record_treatment"
+        android:name="com.mahia.ribot.view.ui.recordtreadment.RecordTreatmentFragment"
+        android:label="@string/title_record_treatment"
+        tools:layout="@layout/fragment_record_treatment" />
+</navigation>

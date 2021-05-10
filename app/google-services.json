@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "459599680510",
+    "project_id": "ninth-incentive-312907",
+    "storage_bucket": "ninth-incentive-312907.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459599680510:android:c28a356a19140e02e7a6af",
+        "android_client_info": {
+          "package_name": "com.mahia.ribot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459599680510-37lfjl5jvg4t2tukg002l78f286juak9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFGh2vQornEXMPOgp1uAwTSGU8XLC4jv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459599680510-37lfjl5jvg4t2tukg002l78f286juak9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
