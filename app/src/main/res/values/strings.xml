@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ribot</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_treatment_present">Your Treatment Now</string>
+    <string name="title_record_treatment">Your Record Treatment</string>
 </resources>

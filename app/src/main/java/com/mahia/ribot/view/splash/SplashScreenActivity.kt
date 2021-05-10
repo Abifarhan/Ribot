@@ -1,4 +1,4 @@
-package com.mahia.ribot
+package com.mahia.ribot.view.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

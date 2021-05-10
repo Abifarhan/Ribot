@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ribot">
-        <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".SignInActivity">
+        <activity
+            android:name=".view.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:exported="true"></activity>
+        <activity android:name=".view.splash.SplashScreenActivity" />
+        <activity android:name=".view.auth.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
