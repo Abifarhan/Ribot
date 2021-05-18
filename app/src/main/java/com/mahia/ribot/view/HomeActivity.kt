@@ -1,14 +1,19 @@
 package com.mahia.ribot.view
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.mahia.ribot.R
 import com.mahia.ribot.databinding.ActivityHomeBinding
+import com.mahia.ribot.view.auth.SignInActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -19,6 +24,13 @@ class HomeActivity : AppCompatActivity() {
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val user = FirebaseAuth.getInstance().currentUser.uid
+        Log.d(this.toString(),"your uid is $user")
+//        if (user == null) {
+//            startActivity(Intent(this,SignInActivity::class.java))
+//        }
+
 
         val navView: BottomNavigationView = binding.navView
 
@@ -32,5 +44,18 @@ class HomeActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+    override fun onStart() {
+        super.onStart()
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        return super.onCreateOptionsMenu(menu)
     }
 }
