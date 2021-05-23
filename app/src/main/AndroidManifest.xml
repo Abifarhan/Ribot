@@ -9,12 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ribot">
+        <activity android:name=".view.ui.recordtreadment.docinfo.DocterInfoActivity"></activity>
         <activity
             android:name=".view.HomeActivity"
-            android:label="@string/title_activity_home"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"
+            android:label="@string/title_activity_home"></activity>
         <activity android:name=".view.splash.SplashScreenActivity" />
         <activity android:name=".view.auth.SignInActivity">
             <intent-filter>
