@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:background="@color/offpurple"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="110dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="84dp"
+        android:lineSpacingMultiplier="1"
+        android:text="45"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ud_img_detail" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ud_img_detail"
+        android:layout_width="147dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="16dp"
+        android:src="@android:color/darker_gray"
+        app:civ_border_color="#FF909090"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@id/gender"
+        android:layout_width="101dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="84dp"
+        android:lineSpacingMultiplier="1"
+        android:text="Male"
+
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ud_img_detail" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="101dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:lineSpacingMultiplier="1"
+        android:text="Male"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/age"
+        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="361dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="16dp"
+        android:lineSpacingMultiplier="1"
+        android:text="Patient Name"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ud_img_detail" />
+
+    <TextView
+        android:id="@+id/number_id"
+        android:layout_width="361dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:lineSpacingMultiplier="1"
+        android:text="101111978"
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="361dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:lineSpacingMultiplier="1"
+        android:text="Jl. Pocut Baren, Banda Aceh"
+
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_id" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
