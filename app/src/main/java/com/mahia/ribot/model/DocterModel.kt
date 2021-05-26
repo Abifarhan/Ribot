@@ -8,7 +8,6 @@ data class DocterModel(
     val id: String = "",
     val field: String = "",
     val name: String = "",
-//    val workPlace:
     val location: String,
     val nameLocation: String
 ) : Parcelable

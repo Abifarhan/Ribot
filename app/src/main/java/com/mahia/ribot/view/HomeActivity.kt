@@ -30,32 +30,6 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val user = FirebaseAuth.getInstance().currentUser.uid
-
-
-//        Log.d(this.toString(),"your uid is $user")
-////        if (user == null) {
-////            startActivity(Intent(this,SignInActivity::class.java))
-////        }
-//
-//        FirebaseFirestore.getInstance().collection("patient")
-//            .document(user).collection("riwayatberobat")
-//            .document("ZThZUNAXTkXutHamGD5K")
-//            .get()
-//            .addOnSuccessListener {
-//                val doctor = it.get("doctor") as HashMap<*,*>
-//                val nameDoctor = doctor["name"]
-//                val specialty = doctor["speciality"]
-//
-//                val record = it.get("record") as HashMap<*,*>
-//                val conclusion = record["conclusion"]
-//                val date = record["date"]
-//
-//                val treatment = record.get("treatment") as HashMap<*,*>
-////                val drugs = treatment
-//                Log.d(this.toString(),"ini nama doctor : $nameDoctor\n ini conclusion: $conclusion\n ini treatment yang diberikan: $treatment")
-//            }
-
 
         val navView: BottomNavigationView = binding.navView
 
@@ -65,7 +39,6 @@ class HomeActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_profile_patient,
-                R.id.navigation_treatment_present,
                 R.id.navigation_record_treatment
             )
         )

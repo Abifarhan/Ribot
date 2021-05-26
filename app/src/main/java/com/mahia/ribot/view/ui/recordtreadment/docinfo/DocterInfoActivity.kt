@@ -10,6 +10,7 @@ import com.mahia.ribot.R
 import com.mahia.ribot.databinding.ActivityDocterInfoBinding
 import com.mahia.ribot.model.RecordTreatmentModel
 
+@Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class DocterInfoActivity : AppCompatActivity() {
 
     companion object {
