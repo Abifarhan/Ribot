@@ -12,7 +12,7 @@ import com.mahia.ribot.model.DocterModel
 import com.mahia.ribot.model.RecordTreatmentModel
 
 class Repo {
-    val uid = FirebaseAuth.getInstance().currentUser.uid
+    val uid = FirebaseAuth.getInstance().currentUser?.uid
     fun getPatientData(): LiveData<MutableList<RecordTreatmentModel>> {
         val mutableData = MutableLiveData<MutableList<RecordTreatmentModel>>()
         FirebaseFirestore.getInstance().collection("patients")

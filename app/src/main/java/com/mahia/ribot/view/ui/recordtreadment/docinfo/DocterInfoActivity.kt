@@ -26,7 +26,7 @@ class DocterInfoActivity : AppCompatActivity() {
         val extras = intent.getParcelableExtra<RecordTreatmentModel>(EXTRA_DATA)
         Toast.makeText(this, "ini data hasil anda kirim ${extras?.doctorId}", Toast.LENGTH_SHORT).show()
 
-        val uid = FirebaseAuth.getInstance().currentUser.uid
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
         FirebaseFirestore.getInstance().collection("patients")
             .whereEqualTo("uid",uid)
             .get()
