@@ -1,6 +1,7 @@
 package com.mahia.ribot.view.ui.profilepatient
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.mahia.ribot.databinding.FragmentProfilePatientBinding
 
 class ProfilePatientFragment : Fragment() {
@@ -33,6 +36,23 @@ class ProfilePatientFragment : Fragment() {
         return root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        FirebaseFirestore.getInstance().collection("patients")
+            .whereEqualTo("uid",uid)
+            .get()
+            .addOnSuccessListener {
+                if (it.size() != 0) {
+                    FirebaseFirestore.getInstance().collection("patients")
+                        .document(it.documents[0].id)
+                        .get()
+                        .addOnSuccessListener {
+                            Log.d(this.toString(),"ini data profil Anda ${it.getString("email")}")
+                        }
+                }
+            }
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
