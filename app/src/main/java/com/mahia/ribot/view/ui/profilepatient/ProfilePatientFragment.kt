@@ -49,6 +49,28 @@ class ProfilePatientFragment : Fragment() {
                         .get()
                         .addOnSuccessListener {
                             Log.d(this.toString(),"ini data profil Anda ${it.getString("email")}")
+
+                            binding.textViewNameProfil.text = it.getString("name")
+                            binding.textViewEmailProfil.text = it.getString("email")
+                            binding.textViewBmiStatus.text = it.getString("bmi_status")
+                            binding.textViewNikProfil.text = it.getString("nik")
+                            binding.textViewPhoneNumberProfil.text = it.getString("phone_number")
+
+                            val address = it.get("address") as HashMap<*,*>
+                            val city = "kota : "+ address["City"]
+                            val province = "Province : " + address["province"]
+
+                            binding.textViewCityProfil.text = city.toString()
+                            binding.textViewProvinceProfil.text = province.toString()
+
+                            val personal = it.get("bio_profile") as HashMap<*,*>
+                            val blood = "Gol Darah : ${personal["blood"]}"
+                            val weight = "${personal["weight"]} kg"
+                            val height = "${personal["height"]} cm"
+
+                            binding.textViewBloodProfil.text = blood.toString()
+                            binding.textViewWeight.text = weight.toString()
+                            binding.textViewHeightProfil.text = height.toString()
                         }
                 }
             }
