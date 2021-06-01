@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".view.splash.SplashScreenActivity">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView_splash"
         android:layout_width="250dp"
         android:layout_height="250dp"

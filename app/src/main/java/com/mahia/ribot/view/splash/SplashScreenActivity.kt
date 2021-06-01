@@ -62,7 +62,7 @@ class SplashScreenActivity : AppCompatActivity() {
             })
             .into(mBinding.imageViewSplash)
 
-        mBinding.imageViewSplash.animate().setDuration(1000)
+        mBinding.imageViewSplash.animate().setDuration(5000)
             .alpha(1f).withEndAction{
                 startActivity(Intent(this,HomeActivity::class.java))
                 finish()

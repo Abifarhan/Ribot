@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.mahia.ribot.R
 
 import com.mahia.ribot.databinding.ActivityHomeBinding
+import com.mahia.ribot.view.auth.SignInActivity
 
 
 class HomeActivity : AppCompatActivity() {
@@ -62,6 +64,17 @@ class HomeActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.navigation, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item?.itemId) {
+            R.id.action_sign_out ->{
+                FirebaseAuth.getInstance().signOut()
+                startActivity(Intent(this,SignInActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

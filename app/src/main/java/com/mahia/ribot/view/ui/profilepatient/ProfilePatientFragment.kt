@@ -1,5 +1,6 @@
 package com.mahia.ribot.view.ui.profilepatient
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -36,6 +37,7 @@ class ProfilePatientFragment : Fragment() {
         return root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val uid = FirebaseAuth.getInstance().currentUser?.uid
@@ -53,7 +55,7 @@ class ProfilePatientFragment : Fragment() {
                             binding.textViewNameProfil.text = it.getString("name")
                             binding.textViewEmailProfil.text = it.getString("email")
                             binding.textViewBmiStatus.text = it.getString("bmi_status")
-                            binding.textViewNikProfil.text = it.getString("nik")
+                            binding.textViewNikProfil.text = "nomor NIK Anda : "+ it.getString("nik")
                             binding.textViewPhoneNumberProfil.text = it.getString("phone_number")
 
                             val address = it.get("address") as HashMap<*,*>
