@@ -3,4 +3,16 @@
     <string name="title_activity_home">MainActivity</string>
     <string name="title_profile">Profile</string>
     <string name="title_record_treatment">Your Record Treatment</string>
+    <string name="this_is_date">this is date</string>
+    <string name="this_is_docter_id">this is docter id</string>
+    <string name="doctor_id">Doctor Id :</string>
+    <string name="this_is_subject">This is Subject</string>
+    <string name="subject">Subject:</string>
+    <string name="description">Description :</string>
+    <string name="this_is_description">this is description</string>
+    <string name="conclusion">Conclusion :</string>
+    <string name="this_is_conclusion">this is conclusion</string>
+    <string name="treatment">Treatment:</string>
+    <string name="this_is_treatment">This is treatment</string>
+    <string name="detail_docter">Detail Docter</string>
 </resources>
