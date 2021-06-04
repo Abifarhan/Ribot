@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/_40sdp">
@@ -36,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Name"
+            android:text="@string/name"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintStart_toStartOf="@+id/imageView3"
@@ -48,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="NIK"
+            android:text="@string/nik"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView_height_profil" />
 
@@ -57,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="City"
+            android:text="@string/city"
             app:layout_constraintStart_toStartOf="@+id/textView_bmi_status"
             app:layout_constraintTop_toBottomOf="@+id/textView_bmi_status" />
 
@@ -66,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="email"
+            android:text="@string/email"
             app:layout_constraintStart_toStartOf="@+id/textView_nik_profil"
             app:layout_constraintTop_toBottomOf="@+id/textView_nik_profil" />
 
@@ -75,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="phone"
+            android:text="@string/phone"
             app:layout_constraintStart_toStartOf="@+id/textView_email_profil"
             app:layout_constraintTop_toBottomOf="@+id/textView_email_profil" />
 
@@ -85,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:text="height"
+            android:text="@string/height"
             app:layout_constraintEnd_toStartOf="@+id/textView_weight"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +94,7 @@
             android:id="@+id/textView_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weight"
+            android:text="@string/weight"
             app:layout_constraintBottom_toBottomOf="@+id/textView_height_profil"
             app:layout_constraintEnd_toStartOf="@+id/textView_blood_profil"
             app:layout_constraintHorizontal_bias="0.5"
@@ -106,7 +105,7 @@
             android:id="@+id/textView_blood_profil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Blood"
+            android:text="@string/blood"
             app:layout_constraintBottom_toBottomOf="@+id/textView_weight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -119,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="32dp"
-            android:text="Province"
+            android:text="@string/province"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView_city_profil"
             app:layout_constraintTop_toBottomOf="@+id/textView_city_profil" />
@@ -129,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="BMI"
+            android:text="@string/bmi"
             app:layout_constraintStart_toStartOf="@+id/textView_phone_number_profil"
             app:layout_constraintTop_toBottomOf="@+id/textView_phone_number_profil" />
     </androidx.constraintlayout.widget.ConstraintLayout>

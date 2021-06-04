@@ -17,4 +17,14 @@
     <string name="detail_docter">Detail Docter</string>
     <string name="your_email">Your Email</string>
     <string name="your_password">Your Password</string>
+    <string name="name">Name</string>
+    <string name="nik">NIK</string>
+    <string name="city">City</string>
+    <string name="email">email</string>
+    <string name="phone">phone</string>
+    <string name="height">height</string>
+    <string name="weight">Weight</string>
+    <string name="blood">Blood</string>
+    <string name="province">Province</string>
+    <string name="bmi">BMI</string>
 </resources>

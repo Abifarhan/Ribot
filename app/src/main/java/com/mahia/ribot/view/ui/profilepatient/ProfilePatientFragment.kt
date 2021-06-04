@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.mahia.ribot.databinding.FragmentProfilePatientBinding
+import com.mahia.ribot.model.Const.Companion.patients
 
 class ProfilePatientFragment : Fragment() {
 
@@ -35,13 +36,14 @@ class ProfilePatientFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val firestore = FirebaseFirestore.getInstance()
         val uid = FirebaseAuth.getInstance().currentUser?.uid
-        FirebaseFirestore.getInstance().collection("patients")
+        firestore.collection(patients)
             .whereEqualTo("uid",uid)
             .get()
             .addOnSuccessListener {
                 if (it.size() != 0) {
-                    FirebaseFirestore.getInstance().collection("patients")
+                    firestore.collection(patients)
                         .document(it.documents[0].id)
                         .get()
                         .addOnSuccessListener {
@@ -70,7 +72,6 @@ class ProfilePatientFragment : Fragment() {
                                 textViewHeightProfil.text = height
                                 progressBar.visibility = View.GONE
                             }
-
                         }
                 }
             }

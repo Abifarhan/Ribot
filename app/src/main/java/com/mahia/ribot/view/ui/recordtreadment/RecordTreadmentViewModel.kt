@@ -16,9 +16,4 @@ class RecordTreadmentViewModel: ViewModel() {
 
         return recordPatientMedical as LiveData<List<RecordTreatmentModel>>
     }
-
-
-//    fun fetchMedicalRecord(): LiveData<List<RecordTreatmentModel>> =
-//        patientRepository.getAllRecordMedical()
-//    }
 }
