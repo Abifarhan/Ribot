@@ -17,11 +17,11 @@ import com.mahia.ribot.databinding.FragmentProfilePatientBinding
 class ProfilePatientFragment : Fragment() {
 
     private lateinit var profilePatientViewModel: ProfilePatientViewModel
-    private var _binding: FragmentProfilePatientBinding? = null
+    private lateinit var _binding: FragmentProfilePatientBinding
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -77,8 +77,5 @@ class ProfilePatientFragment : Fragment() {
                 }
             }
     }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
 }

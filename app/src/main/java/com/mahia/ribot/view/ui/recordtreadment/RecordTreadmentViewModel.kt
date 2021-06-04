@@ -6,14 +6,19 @@ import androidx.lifecycle.ViewModel
 import com.mahia.ribot.domain.data.network.PatientRepository
 import com.mahia.ribot.model.RecordTreatmentModel
 
-class RecordTreadmentViewModel : ViewModel() {
+class RecordTreadmentViewModel: ViewModel() {
 
-    fun fetchPatientData(): LiveData<List<RecordTreatmentModel>> {
-        val recordPatientMedical = MutableLiveData<List<RecordTreatmentModel>>()
-        PatientRepository().getPatientData().observeForever{ patientList ->
-            recordPatientMedical.value = patientList
+    fun fetchMedicalRecord(): LiveData<List<RecordTreatmentModel>> {
+        val recordPatientMedical = MutableLiveData<ArrayList<RecordTreatmentModel>>()
+        PatientRepository().getAllMedicalRecord().observeForever{ patientList ->
+            recordPatientMedical.value = patientList as ArrayList
         }
 
-        return recordPatientMedical
+        return recordPatientMedical as LiveData<List<RecordTreatmentModel>>
     }
+
+
+//    fun fetchMedicalRecord(): LiveData<List<RecordTreatmentModel>> =
+//        patientRepository.getAllRecordMedical()
+//    }
 }

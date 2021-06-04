@@ -15,7 +15,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.mahia.ribot.R
 import com.mahia.ribot.databinding.ActivitySplashScreenBinding
-import com.mahia.ribot.view.HomeActivity
 import com.mahia.ribot.view.auth.SignInActivity
 
 class SplashScreenActivity : AppCompatActivity() {
