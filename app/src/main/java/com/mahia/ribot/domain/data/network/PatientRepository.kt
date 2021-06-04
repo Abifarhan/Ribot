@@ -10,18 +10,18 @@ import com.google.firebase.firestore.Query
 import com.mahia.ribot.model.Const
 import com.mahia.ribot.model.RecordTreatmentModel
 
-class ListRecordRepo {
+class PatientRepository {
     private val firestore = FirebaseFirestore.getInstance()
     private val uid = FirebaseAuth.getInstance().currentUser?.uid
-    fun getPatientData(): LiveData<MutableList<RecordTreatmentModel>> {
-        val mutableData = MutableLiveData<MutableList<RecordTreatmentModel>>()
+    fun getPatientData(): LiveData<List<RecordTreatmentModel>> {
+        val patientResult = MutableLiveData<List<RecordTreatmentModel>>()
         firestore.collection(Const.patients)
             .whereEqualTo(Const.uidPatient, uid)
             .get()
             .addOnSuccessListener {
                 if (it.size() != 0) {
                     Log.d(this.toString(), "ini nik Anda ${it.documents.get(0).id}")
-                    val listData = mutableListOf<RecordTreatmentModel>()
+                    val listRecordMedical = ArrayList<RecordTreatmentModel>()
                     firestore.collection(Const.patients)
                         .document(it.documents[0].id).collection(Const.medicalHistory)
                         .orderBy(FieldPath.documentId(), Query.Direction.ASCENDING)
@@ -42,14 +42,14 @@ class ListRecordRepo {
                                     subject!!,
                                     treatment
                                 )
-                                listData.add(recordTreatmentModel)
+                                listRecordMedical.add(recordTreatmentModel)
                             }
-                            mutableData.value = listData
+                            patientResult.value = listRecordMedical
 
                         }
 
                 }
             }
-        return mutableData
+        return patientResult
     }
 }

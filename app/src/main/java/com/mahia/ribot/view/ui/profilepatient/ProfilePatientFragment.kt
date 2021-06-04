@@ -54,7 +54,7 @@ class ProfilePatientFragment : Fragment() {
 
                             binding.textViewNameProfil.text = it.getString("name")
                             binding.textViewEmailProfil.text = it.getString("email")
-                            binding.textViewBmiStatus.text = it.getString("bmi_status")
+                            binding.textViewBmiStatus.text = "kondisi Anda : " + it.getString("bmi_status")
                             binding.textViewNikProfil.text = "nomor NIK Anda : "+ it.getString("nik")
                             binding.textViewPhoneNumberProfil.text = it.getString("phone_number")
 

@@ -15,7 +15,7 @@ import java.util.*
 class RecordAdapter(private val context: Context) :
     RecyclerView.Adapter<RecordAdapter.ViewHolder>() {
 
-    private var dataList = mutableListOf<RecordTreatmentModel>()
+    private var dataList = listOf<RecordTreatmentModel>()
     private var onItemClickCallback: OnItemClickCallback? = null
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -23,7 +23,7 @@ class RecordAdapter(private val context: Context) :
     }
 
 
-    fun setListData(data: MutableList<RecordTreatmentModel>) {
+    fun setListData(data: List<RecordTreatmentModel>) {
         dataList = data
     }
 
