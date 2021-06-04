@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.mahia.ribot.R
 import com.mahia.ribot.databinding.ActivitySignInBinding
 import com.mahia.ribot.view.HomeActivity
 

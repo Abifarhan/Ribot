@@ -2,11 +2,9 @@ package com.mahia.ribot.view.ui.recordtreadment
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -38,7 +36,6 @@ class RecordTreatmentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         adapter = RecordAdapter()
         adapter.setOnItemClickCallback(object : RecordAdapter.OnItemClickCallback {
             override fun onItemClicked(data: RecordTreatmentModel) {
@@ -48,10 +45,12 @@ class RecordTreatmentFragment : Fragment() {
             }
 
         })
+        _binding.progressBar.visibility = View.VISIBLE
         _binding.rvRecordTreatment.layoutManager = LinearLayoutManager(activity)
         _binding.rvRecordTreatment.adapter = adapter
         recordTreadmentViewModel.fetchMedicalRecord().observe(viewLifecycleOwner, Observer {
             adapter.setListData(it)
+            _binding.progressBar.visibility = View.GONE
             adapter.notifyDataSetChanged()
         })
     }

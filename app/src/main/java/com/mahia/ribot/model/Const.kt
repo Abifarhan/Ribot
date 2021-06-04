@@ -1,6 +1,5 @@
 package com.mahia.ribot.model
 
-import com.google.firebase.firestore.FirebaseFirestore
 
 open class Const {
 

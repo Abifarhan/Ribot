@@ -19,7 +19,6 @@ import com.mahia.ribot.view.auth.SignInActivity
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,21 +40,6 @@ class HomeActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-
-
-
-
-
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -64,7 +48,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
+        when (item.itemId) {
             R.id.action_sign_out ->{
                 FirebaseAuth.getInstance().signOut()
                 startActivity(Intent(this,SignInActivity::class.java))

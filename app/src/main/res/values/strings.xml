@@ -15,4 +15,6 @@
     <string name="treatment">Treatment:</string>
     <string name="this_is_treatment">This is treatment</string>
     <string name="detail_docter">Detail Docter</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_password">Your Password</string>
 </resources>

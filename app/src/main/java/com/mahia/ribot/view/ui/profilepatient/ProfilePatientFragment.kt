@@ -19,15 +19,13 @@ class ProfilePatientFragment : Fragment() {
     private lateinit var profilePatientViewModel: ProfilePatientViewModel
     private lateinit var _binding: FragmentProfilePatientBinding
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         profilePatientViewModel =
             ViewModelProvider(this).get(ProfilePatientViewModel::class.java)
 
@@ -50,29 +48,32 @@ class ProfilePatientFragment : Fragment() {
                         .document(it.documents[0].id)
                         .get()
                         .addOnSuccessListener {
-                            Log.d(this.toString(),"ini data profil Anda ${it.getString("email")}")
+                            binding.apply {
+                                progressBar.visibility = View.VISIBLE
+                                textViewNameProfil.text = it.getString("name")
+                                textViewEmailProfil.text = it.getString("email")
+                                textViewBmiStatus.text = "kondisi Anda : " + it.getString("bmi_status")
+                                textViewNikProfil.text = "nomor NIK Anda : "+ it.getString("nik")
+                                textViewPhoneNumberProfil.text = it.getString("phone_number")
 
-                            binding.textViewNameProfil.text = it.getString("name")
-                            binding.textViewEmailProfil.text = it.getString("email")
-                            binding.textViewBmiStatus.text = "kondisi Anda : " + it.getString("bmi_status")
-                            binding.textViewNikProfil.text = "nomor NIK Anda : "+ it.getString("nik")
-                            binding.textViewPhoneNumberProfil.text = it.getString("phone_number")
+                                val address = it.get("address") as HashMap<*,*>
+                                val city = "kota : "+ address["City"]
+                                val province = "Province : " + address["province"]
 
-                            val address = it.get("address") as HashMap<*,*>
-                            val city = "kota : "+ address["City"]
-                            val province = "Province : " + address["province"]
+                                textViewCityProfil.text = city
+                                textViewProvinceProfil.text = province
 
-                            binding.textViewCityProfil.text = city.toString()
-                            binding.textViewProvinceProfil.text = province.toString()
+                                val personal = it.get("bio_profile") as HashMap<*,*>
+                                val blood = "Gol Darah : ${personal["blood"]}"
+                                val weight = "${personal["weight"]} kg"
+                                val height = "${personal["height"]} cm"
 
-                            val personal = it.get("bio_profile") as HashMap<*,*>
-                            val blood = "Gol Darah : ${personal["blood"]}"
-                            val weight = "${personal["weight"]} kg"
-                            val height = "${personal["height"]} cm"
+                                binding.textViewBloodProfil.text = blood
+                                binding.textViewWeight.text = weight
+                                binding.textViewHeightProfil.text = height
+                                progressBar.visibility = View.GONE
+                            }
 
-                            binding.textViewBloodProfil.text = blood.toString()
-                            binding.textViewWeight.text = weight.toString()
-                            binding.textViewHeightProfil.text = height.toString()
                         }
                 }
             }

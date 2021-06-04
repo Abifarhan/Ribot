@@ -3,9 +3,7 @@ package com.mahia.ribot.model
 import android.os.Parcelable
 import com.google.firebase.Timestamp
 import kotlinx.parcelize.Parcelize
-import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 @Parcelize
 data class RecordTreatmentModel(
