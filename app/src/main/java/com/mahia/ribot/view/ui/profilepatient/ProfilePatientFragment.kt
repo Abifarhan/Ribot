@@ -2,13 +2,10 @@ package com.mahia.ribot.view.ui.profilepatient
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -68,9 +65,9 @@ class ProfilePatientFragment : Fragment() {
                                 val weight = "${personal["weight"]} kg"
                                 val height = "${personal["height"]} cm"
 
-                                binding.textViewBloodProfil.text = blood
-                                binding.textViewWeight.text = weight
-                                binding.textViewHeightProfil.text = height
+                                textViewBloodProfil.text = blood
+                                textViewWeight.text = weight
+                                textViewHeightProfil.text = height
                                 progressBar.visibility = View.GONE
                             }
 
