@@ -7,26 +7,27 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.mahia.ribot.model.Const
 import com.mahia.ribot.model.RecordTreatmentModel
 
 class ListRecordRepo {
+    private val firestore = FirebaseFirestore.getInstance()
     private val uid = FirebaseAuth.getInstance().currentUser?.uid
     fun getPatientData(): LiveData<MutableList<RecordTreatmentModel>> {
         val mutableData = MutableLiveData<MutableList<RecordTreatmentModel>>()
-        FirebaseFirestore.getInstance().collection("patients")
-            .whereEqualTo("uid", uid)
+        firestore.collection(Const.patients)
+            .whereEqualTo(Const.uidPatient, uid)
             .get()
             .addOnSuccessListener {
                 if (it.size() != 0) {
                     Log.d(this.toString(), "ini nik Anda ${it.documents.get(0).id}")
                     val listData = mutableListOf<RecordTreatmentModel>()
-                    FirebaseFirestore.getInstance().collection("patients")
-                        .document(it.documents[0].id).collection("medicalhistory")
+                    firestore.collection(Const.patients)
+                        .document(it.documents[0].id).collection(Const.medicalHistory)
                         .orderBy(FieldPath.documentId(), Query.Direction.ASCENDING)
                         .get()
                         .addOnSuccessListener {
                             for (document in it) {
-                                val record = it.documents.size
                                 val conclusion = document.getString("conclusion")
                                 val date = document.getTimestamp("date")
                                 val description = document.getString("description")

@@ -14,8 +14,5 @@ data class RecordTreatmentModel(
     val description: String = "default",
     val doctorId: String = "default",
     val subject: String = "default",
-//    val Location: String = "default",
-//    val subject: String = "default",
-//    val subject: String = "default",
     val treatment: ArrayList<String>? = null,
 ) : Parcelable
