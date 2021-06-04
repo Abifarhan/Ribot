@@ -13,7 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.mahia.ribot.R
 import com.mahia.ribot.databinding.ActivityHomeBinding
-import com.mahia.ribot.view.auth.SignInActivity
+import com.mahia.ribot.view.ui.auth.SignInActivity
 
 
 class HomeActivity : AppCompatActivity() {
@@ -49,9 +49,9 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_sign_out ->{
+            R.id.action_sign_out -> {
                 FirebaseAuth.getInstance().signOut()
-                startActivity(Intent(this,SignInActivity::class.java))
+                startActivity(Intent(this, SignInActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)

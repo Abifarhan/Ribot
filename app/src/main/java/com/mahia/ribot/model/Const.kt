@@ -2,7 +2,6 @@ package com.mahia.ribot.model
 
 
 open class Const {
-
     companion object {
         const val uidPatient = "uid"
         const val patients = "patients"
@@ -13,6 +12,5 @@ open class Const {
         const val doctorId = "doctors_id"
         const val subject = "subject"
         const val treatment = "treatment"
-
     }
 }

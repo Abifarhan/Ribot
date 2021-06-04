@@ -15,7 +15,7 @@ import com.mahia.ribot.view.ui.recordtreadment.docinfo.DocterInfoActivity
 
 class RecordTreatmentFragment : Fragment() {
 
-    private lateinit var recordTreadmentViewModel: RecordTreadmentViewModel
+    private lateinit var recordTreatmentsViewModel: RecordTreatmentsViewModel
     private lateinit var _binding: FragmentRecordTreatmentBinding
     private lateinit var adapter: RecordAdapter
 
@@ -24,8 +24,8 @@ class RecordTreatmentFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        recordTreadmentViewModel =
-            ViewModelProvider(this).get(RecordTreadmentViewModel::class.java)
+        recordTreatmentsViewModel =
+            ViewModelProvider(this).get(RecordTreatmentsViewModel::class.java)
 
         _binding = FragmentRecordTreatmentBinding.inflate(
             inflater,
@@ -48,7 +48,7 @@ class RecordTreatmentFragment : Fragment() {
         _binding.progressBar.visibility = View.VISIBLE
         _binding.rvRecordTreatment.layoutManager = LinearLayoutManager(activity)
         _binding.rvRecordTreatment.adapter = adapter
-        recordTreadmentViewModel.fetchMedicalRecord().observe(viewLifecycleOwner, Observer {
+        recordTreatmentsViewModel.fetchMedicalRecord().observe(viewLifecycleOwner, Observer {
             adapter.setListData(it)
             _binding.progressBar.visibility = View.GONE
             adapter.notifyDataSetChanged()

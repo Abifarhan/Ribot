@@ -7,10 +7,10 @@ import kotlin.collections.ArrayList
 
 @Parcelize
 data class RecordTreatmentModel(
-    val conclusion: String = "default",
+    val conclusion: String = "",
     val date: Timestamp? = null,
-    val description: String = "default",
-    val doctorId: String = "default",
-    val subject: String = "default",
+    val description: String = "",
+    val doctorId: String = "",
+    val subject: String = "",
     val treatment: ArrayList<String>? = null,
 ) : Parcelable

@@ -3,8 +3,6 @@ package com.mahia.ribot.view.ui.recordtreadment.docinfo
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
 import androidx.lifecycle.ViewModelProvider
@@ -16,7 +14,6 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.mahia.ribot.R
 import com.mahia.ribot.databinding.ActivityDocterInfoBinding
 import com.mahia.ribot.model.RecordTreatmentModel
@@ -38,6 +35,7 @@ class DocterInfoActivity : AppCompatActivity() {
 
 
         val extras = intent.getParcelableExtra<RecordTreatmentModel>(EXTRA_DATA)
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
         Toast.makeText(this, "ini data hasil anda kirim ${extras?.doctorId}", Toast.LENGTH_SHORT)
             .show()
 
@@ -45,14 +43,14 @@ class DocterInfoActivity : AppCompatActivity() {
             this,
             ViewModelProvider.NewInstanceFactory()
         ).get(DoctorInfoViewModel::class.java)
-        doctorInfoViewModel.setDocterInfo(extras?.doctorId.toString())
-        doctorInfoViewModel.docterInfo.observe(this, {
+        doctorInfoViewModel.setDoctorInfo(extras?.doctorId.toString(), uid.toString())
+        doctorInfoViewModel.doctorInfo.observe(this, {
             binding.apply {
                 this!!.textViewDocterNameInfo.text = it.name
                 textViewFieldDocterInfo.text = it.field
                 textViewIcDocterInfo.text = it.doctorId
                 textViewLocationInfo.text = it.location
-                textViewNameInstantionInfo.text = it.nameInstantion
+                textViewNameInstantionInfo.text = it.nameInstantiation
             }
         })
         takePictureDocter()

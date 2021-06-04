@@ -1,4 +1,4 @@
-package com.mahia.ribot.domain.data.remote
+package com.mahia.ribot.data.remote.firestore
 
 import android.util.Log
 import androidx.lifecycle.LiveData

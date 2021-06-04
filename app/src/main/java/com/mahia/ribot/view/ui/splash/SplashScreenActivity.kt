@@ -1,4 +1,4 @@
-package com.mahia.ribot.view.splash
+package com.mahia.ribot.view.ui.splash
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
@@ -15,7 +15,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.mahia.ribot.R
 import com.mahia.ribot.databinding.ActivitySplashScreenBinding
-import com.mahia.ribot.view.auth.SignInActivity
+import com.mahia.ribot.view.ui.auth.SignInActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -64,7 +64,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         mBinding.imageViewSplash.animate().setDuration(2000)
             .alpha(1f).withEndAction{
-                startActivity(Intent(this,SignInActivity::class.java))
+                startActivity(Intent(this, SignInActivity::class.java))
                 finish()
             }
     }

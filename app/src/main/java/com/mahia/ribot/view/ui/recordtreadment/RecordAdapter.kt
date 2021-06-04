@@ -21,7 +21,6 @@ class RecordAdapter :
         this.onItemClickCallback = onItemClickCallback
     }
 
-
     fun setListData(data: List<RecordTreatmentModel>) {
         dataList = data
     }
@@ -31,15 +30,14 @@ class RecordAdapter :
 
 
     override fun onBindViewHolder(holder: RecordAdapter.ViewHolder, position: Int) {
-        val user = dataList[position]
-        holder.bindView(user)
+        holder.bind(dataList[position])
     }
 
     override fun getItemCount(): Int = dataList.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemPatientBinding.bind(itemView)
-        fun bindView(docterList: RecordTreatmentModel) {
+        fun bind(docterList: RecordTreatmentModel) {
             binding.apply {
                 textViewConclusionRecord.text = docterList.conclusion
                 textViewDescriptionRecord.text = docterList.description
@@ -56,10 +54,8 @@ class RecordAdapter :
 
                 val localeID = Locale("in", "ID")
                 val dateFormat = SimpleDateFormat("dd/MM/yyyy", localeID)
-                val timeFormat = SimpleDateFormat("h:mm a", localeID)
 
                 val dateValue: String = dateFormat.format(calendar.time)
-                val timeValue: String = timeFormat.format(calendar.time)
                 textViewDateRecord.text = dateValue
 
                 buttonDetailDocter.setOnClickListener {

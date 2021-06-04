@@ -1,4 +1,4 @@
-package com.mahia.ribot.view.auth
+package com.mahia.ribot.view.ui.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

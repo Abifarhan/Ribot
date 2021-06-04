@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.mahia.ribot.databinding.FragmentProfilePatientBinding
-import com.mahia.ribot.model.Const.Companion.patients
 
 class ProfilePatientFragment : Fragment() {
 
@@ -38,43 +37,27 @@ class ProfilePatientFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val firestore = FirebaseFirestore.getInstance()
         val uid = FirebaseAuth.getInstance().currentUser?.uid
-        firestore.collection(patients)
-            .whereEqualTo("uid",uid)
-            .get()
-            .addOnSuccessListener {
-                if (it.size() != 0) {
-                    firestore.collection(patients)
-                        .document(it.documents[0].id)
-                        .get()
-                        .addOnSuccessListener {
-                            binding.apply {
-                                progressBar.visibility = View.VISIBLE
-                                textViewNameProfil.text = it.getString("name")
-                                textViewEmailProfil.text = it.getString("email")
-                                textViewBmiStatus.text = "kondisi Anda : " + it.getString("bmi_status")
-                                textViewNikProfil.text = "nomor NIK Anda : "+ it.getString("nik")
-                                textViewPhoneNumberProfil.text = it.getString("phone_number")
-
-                                val address = it.get("address") as HashMap<*,*>
-                                val city = "kota : "+ address["City"]
-                                val province = "Province : " + address["province"]
-
-                                textViewCityProfil.text = city
-                                textViewProvinceProfil.text = province
-
-                                val personal = it.get("bio_profile") as HashMap<*,*>
-                                val blood = "Gol Darah : ${personal["blood"]}"
-                                val weight = "${personal["weight"]} kg"
-                                val height = "${personal["height"]} cm"
-
-                                textViewBloodProfil.text = blood
-                                textViewWeight.text = weight
-                                textViewHeightProfil.text = height
-                                progressBar.visibility = View.GONE
-                            }
-                        }
-                }
+        profilePatientViewModel = ViewModelProvider(
+            requireActivity(),
+            ViewModelProvider.NewInstanceFactory()
+        ).get(ProfilePatientViewModel::class.java)
+        profilePatientViewModel.setPatientInfo(uid.toString())
+        profilePatientViewModel.patientInfo.observe(viewLifecycleOwner, {
+            binding.apply {
+                progressBar.visibility = View.VISIBLE
+                textViewNameProfil.text = it.name
+                textViewEmailProfil.text = it.email
+                textViewBmiStatus.text = it.condition
+                textViewNikProfil.text = it.nik
+                textViewPhoneNumberProfil.text = it.phoneNumber
+                textViewCityProfil.text = it.city
+                textViewProvinceProfil.text = it.province
+                textViewBloodProfil.text = it.blood
+                textViewWeight.text = it.weight
+                textViewHeightProfil.text = it.height
+                progressBar.visibility = View.GONE
             }
+        })
     }
 
 }

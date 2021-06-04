@@ -15,14 +15,14 @@
             android:name=".view.HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home" />
-        <activity android:name=".view.splash.SplashScreenActivity">
+        <activity android:name=".view.ui.splash.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.auth.SignInActivity">
+        <activity android:name=".view.ui.auth.SignInActivity">
 
         </activity>
     </application>

@@ -4,17 +4,15 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.mahia.ribot.model.DoctorModel
 
 class DoctorInfoViewModel: ViewModel() {
     private val oneItem = MutableLiveData<DoctorModel>()
 
-    fun setDocterInfo(doctorId: String) {
-        val uid = FirebaseAuth.getInstance().currentUser?.uid
+    fun setDoctorInfo(doctorId: String, userUid: String) {
         FirebaseFirestore.getInstance().collection("patients")
-            .whereEqualTo("uid",uid)
+            .whereEqualTo("uid",userUid)
             .get()
             .addOnSuccessListener {
                 if (it.size() != 0) {
@@ -42,6 +40,6 @@ class DoctorInfoViewModel: ViewModel() {
             }
     }
 
-    val docterInfo: LiveData<DoctorModel>
+    val doctorInfo: LiveData<DoctorModel>
     get() = oneItem
 }
