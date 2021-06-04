@@ -1,4 +1,4 @@
-package com.mahia.ribot.domain.data.network
+package com.mahia.ribot.domain.data.remote
 
 import androidx.lifecycle.LiveData
 import com.mahia.ribot.model.RecordTreatmentModel

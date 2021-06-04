@@ -1,7 +1,6 @@
-package com.mahia.ribot.domain.data.network
+package com.mahia.ribot.domain.data.remote
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
