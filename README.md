@@ -1,13 +1,16 @@
 # Ribot
 Riwayat Berobat is the app for Capstone Project by B21-CAP0480 team
 
-the Authentication of the user is managed by the hospital
 
 use this account for login :
 email : ananda@gmail.com
 password : qwerty
 
-Note: the internet connection is required to run this program
+Note: 
+- The internet connection is required to run this program
+- Doctors and Patients cannot register for reasons of security and prevent misuse of patient data
+- The Authentication of the user is managed by the admin of project for security reason
+
 
 Documentation:
 1. Make sure the device have internet connection
