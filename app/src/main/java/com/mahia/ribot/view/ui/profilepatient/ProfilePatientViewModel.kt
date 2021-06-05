@@ -9,7 +9,6 @@ import com.mahia.ribot.model.Const.Companion.uidPatient
 import com.mahia.ribot.model.PatientModel
 
 class ProfilePatientViewModel : ViewModel() {
-
     private val oneItem = MutableLiveData<PatientModel>()
     private val firestore = FirebaseFirestore.getInstance()
     fun setPatientInfo(patientUid: String) {
@@ -22,9 +21,6 @@ class ProfilePatientViewModel : ViewModel() {
                         .document(it.documents[0].id)
                         .get()
                         .addOnSuccessListener {
-
-
-
                             val address = it.get("address") as HashMap<*, *>
                             val city = "kota : " + address["City"]
                             val province = "Province : " + address["province"]
@@ -32,7 +28,6 @@ class ProfilePatientViewModel : ViewModel() {
                             val blood = "Gol Darah : ${personal["blood"]}"
                             val weight = "${personal["weight"]} kg"
                             val height = "${personal["height"]} cm"
-
                             val patientModel = PatientModel(
                                 it.getString("name").toString(),
                                 it.getString("email").toString(),

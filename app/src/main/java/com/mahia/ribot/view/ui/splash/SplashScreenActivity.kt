@@ -18,9 +18,7 @@ import com.mahia.ribot.databinding.ActivitySplashScreenBinding
 import com.mahia.ribot.view.ui.auth.SignInActivity
 
 class SplashScreenActivity : AppCompatActivity() {
-
     private lateinit var mBinding: ActivitySplashScreenBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivitySplashScreenBinding.inflate(layoutInflater)

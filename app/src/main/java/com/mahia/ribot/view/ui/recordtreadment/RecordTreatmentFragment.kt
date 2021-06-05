@@ -14,11 +14,9 @@ import com.mahia.ribot.model.RecordTreatmentModel
 import com.mahia.ribot.view.ui.recordtreadment.docinfo.DocterInfoActivity
 
 class RecordTreatmentFragment : Fragment() {
-
     private lateinit var recordTreatmentsViewModel: RecordTreatmentsViewModel
     private lateinit var _binding: FragmentRecordTreatmentBinding
     private lateinit var adapter: RecordAdapter
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -43,7 +41,6 @@ class RecordTreatmentFragment : Fragment() {
                 intent.putExtra(DocterInfoActivity.EXTRA_DATA, data)
                 startActivity(intent)
             }
-
         })
         _binding.progressBar.visibility = View.VISIBLE
         _binding.rvRecordTreatment.layoutManager = LinearLayoutManager(activity)
@@ -54,6 +51,4 @@ class RecordTreatmentFragment : Fragment() {
             adapter.notifyDataSetChanged()
         })
     }
-
-
 }
