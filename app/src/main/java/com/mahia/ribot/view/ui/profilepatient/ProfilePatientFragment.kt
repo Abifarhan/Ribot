@@ -28,14 +28,12 @@ class ProfilePatientFragment : Fragment() {
 
         _binding = FragmentProfilePatientBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         return root
     }
 
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val firestore = FirebaseFirestore.getInstance()
         val uid = FirebaseAuth.getInstance().currentUser?.uid
         profilePatientViewModel = ViewModelProvider(
             requireActivity(),

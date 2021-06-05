@@ -48,7 +48,7 @@ class SignInActivity : AppCompatActivity() {
                 .addOnFailureListener{
                     binding.progressBar.visibility = View.GONE
                     binding.buttonLogin.visibility = View.VISIBLE
-                    Toast.makeText(this@SignInActivity, "Anda gagal melakukna login, pastikan password dan email sudah terisi dengan benar", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SignInActivity, "Anda gagal melakukan login, pastikan password dan email sudah terisi dengan benar", Toast.LENGTH_SHORT).show()
                 }
         }
 

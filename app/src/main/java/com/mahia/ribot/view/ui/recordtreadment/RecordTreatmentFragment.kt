@@ -24,7 +24,6 @@ class RecordTreatmentFragment : Fragment() {
     ): View {
         recordTreatmentsViewModel =
             ViewModelProvider(this).get(RecordTreatmentsViewModel::class.java)
-
         _binding = FragmentRecordTreatmentBinding.inflate(
             inflater,
             container, false
